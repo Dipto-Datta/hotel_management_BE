@@ -1,0 +1,66 @@
+{% load static %}
+
+
+<div class="ui container" style="">
+  {% if request.user.is_authenticated %}  
+  <div style="height:20 px; bottom:0; width:210px; padding-left:5px; position:fixed; left:0;background-color:#51627E; z-index:1; border-top: 2px solid #A4ADBA; margin-bottom:40px;">
+    <div class="ui simple dropdown item" style="background-color:#51627E; border-radius:5px;  display:inline-block; width:150px; color:white; margin: 5px 0px; transition-duration: 0.4s; ">
+      <div style="width:150px; text-align:left; font-size:20px; margin-left:10px;">{{request.user.username}} </div> 
+      <div style="width:150px; text-align:left; font-size:15px; margin-left:10px; color: #A4ADBA;">@{{request.user.position}} </div> 
+      
+      
+      {% comment %} <div class="menu" style="width:80px; margin-top:3px;">
+      <form class="ui large form" method="post" action={% url 'logout_user' %}>
+
+        {% csrf_token %}
+      <input class="ui button"
+            type="submit"
+            value="Sign out"
+            style="width:100px;"
+          />
+        </form>
+      </div> {% endcomment %}
+    </div>
+    {% comment %} <input type="a" href="/auth/logout_user/" icon="fa-solid fa-arrow-right-to-bracket"> {% endcomment %}
+  
+    <a class="logo" href="{% url 'logout_user' %}" style="font-size:22px; margin-left:10px; color:#A4ADBA;"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+    
+    
+    
+  </div>
+ 
+
+  {% else %}
+  {% comment %} <div class="ui item" style="margin:10px 70px 0 0; float:right;" >
+  <a href={% url 'login' %} class="ui positive button" style="background-color:teal;">Login</a>
+  </div>
+  
+  <div class="ui item" style="margin:10px; float:right;">
+  <a href={% url 'register' %} class="ui positive button" style="background-color:teal;">Register</a>
+  </div> {% endcomment %}
+
+  {% endif %}
+</div>
+
+<style>
+
+  
+  
+ 
+  
+
+  .logo:hover {
+    background: #51627E;
+    border: 2px solid #A4ADBA;
+  }
+  
+  .ui .button {
+    background-color: white; 
+    color: black; 
+    
+  }
+  .ui .button:hover {
+    background-color: teal;
+    color: white;
+  }
+</style>
