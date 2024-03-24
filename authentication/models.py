@@ -15,10 +15,8 @@ class company_master(models.Model):
     city = models.CharField(max_length=50, null=True, blank=True)
     bat = models.CharField(max_length=50, null=True, blank=True)
     bin = models.CharField(max_length=50, null=True, blank=True)
-    contact_person_name = models.CharField(
-        max_length=50, null=True, blank=True)
-    contact_person_phone = models.CharField(
-        max_length=50, null=True, blank=True)
+    contact_person_name = models.CharField(max_length=50, null=True, blank=True)
+    contact_person_phone = models.CharField(max_length=50, null=True, blank=True)
     laundry_tax = models.IntegerField(null=True, blank=True)
     laundry_sc = models.IntegerField(null=True, blank=True)
     room_service_tax = models.IntegerField(null=True, blank=True)
@@ -29,9 +27,9 @@ class company_master(models.Model):
 
 
 class role_master(models.Model):
-    role_name = models.CharField(max_length=2000,blank=True,null=True)
-    #company = models.ForeignKey(company_master, on_delete=CASCADE, null=True)
-    position = models.CharField(max_length=100,blank=True,null=True)
+    role_name = models.CharField(max_length=2000, blank=True, null=True)
+    # company = models.ForeignKey(company_master, on_delete=CASCADE, null=True)
+    position = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.role_name
