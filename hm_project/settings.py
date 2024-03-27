@@ -98,7 +98,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "hm_backend.wsgi.application"
+WSGI_APPLICATION = "hm_project.wsgi.application"
 
 
 # Database
